@@ -1025,6 +1025,9 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt.softtabstop = 2
     vim.opt.autoindent = true
     vim.opt.smartindent = true
+    local lc = vim.deepcopy(vim.opt.listchars:get())
+    lc.tab = '  '
+    vim.opt_local.listchars = lc
   end,
 })
 
