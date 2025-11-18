@@ -1018,6 +1018,18 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'sql',
+  callback = function()
+    vim.opt.expandtab = true
+    vim.opt.tabstop = 2
+    vim.opt.shiftwidth = 2
+    vim.opt.softtabstop = 2
+    vim.opt.autoindent = true
+    vim.opt.smartindent = true
+  end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
   pattern = 'go',
   callback = function()
     vim.opt.tabstop = 2
